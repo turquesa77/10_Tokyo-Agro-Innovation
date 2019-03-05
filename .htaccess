@@ -1,0 +1,125 @@
+# 「http」と「https」を切り分けてリダイレクト
+RewriteEngine on
+RewriteBase /
+
+#アグロ分析・計測機器展（ディレクトリ削除）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^analysis_measurement/(.*)$ http://www.jma.or.jp/ai/ja/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^analysis_measurement/(.*)$ https://www.jma.or.jp/ai/ja/$1 [R=301,L]
+
+#出展料金（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/cost.html http://www.jma.or.jp/ai/ja/exhibit/fee.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/cost.html https://www.jma.or.jp/ai/ja/exhibit/fee.php [R=301,L]
+
+#ロゴ・バナーダウンロード（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/dl.html http://www.jma.or.jp/ai/ja/press/download.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/dl.html https://www.jma.or.jp/ai/ja/press/download.php [R=301,L]
+
+#お申込みから会期までの流れ（ファイル名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/index.html http://www.jma.or.jp/ai/ja/exhibit/schedule.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/index.html https://www.jma.or.jp/ai/ja/exhibit/schedule.php [R=301,L]
+
+#出展オプションのご案内（拡張子変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^exhibit/option.html http://www.jma.or.jp/ai/ja/exhibit/option.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^exhibit/option.html https://www.jma.or.jp/ai/ja/exhibit/option.php [R=301,L]
+
+#アグリ・フードビジネス展（ディレクトリ削除）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^food_health/index.html http://www.jma.or.jp/ai/ja/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^food_health/index.html https://www.jma.or.jp/ai/ja/$1 [R=301,L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^food_health/(.*)$ http://www.jma.or.jp/ai/ja/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^food_health/(.*)$ https://www.jma.or.jp/ai/ja/$1 [R=301,L]
+
+#アグリ加工・流通展（ディレクトリ名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^process_distrib/index.html http://www.jma.or.jp/ai/ja/process/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^process_distrib/index.html https://www.jma.or.jp/ai/ja/process/index.php [R=301,L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^process_distrib/(.*)$ http://www.jma.or.jp/ai/ja/process/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^process_distrib/(.*)$ https://www.jma.or.jp/ai/ja/process/$1 [R=301,L]
+
+#アグリ生産資材展（ディレクトリ名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^product_material/(.*)$ http://www.jma.or.jp/ai/ja/process/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^product_material/(.*)$ https://www.jma.or.jp/ai/ja/process/$1 [R=301,L]
+
+#セミナープログラム（準備中）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^seminar/index.html http://www.jma.or.jp/ai/ja/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^seminar/index.html https://www.jma.or.jp/ai/ja/$1 [R=301,L]
+
+#特別企画（準備中）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^seminar/planning.html http://www.jma.or.jp/ai/ja/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^seminar/planning.html https://www.jma.or.jp/ai/ja/$1 [R=301,L]
+
+#土づくりEXPO（ディレクトリ名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^soil/index.html http://www.jma.or.jp/ai/ja/soil/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^soil/index.html https://www.jma.or.jp/ai/ja/soil/index.php [R=301,L]
+
+#VegeFruPackTOKYO（ディレクトリ名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^vegefru_pack/index.html http://www.jma.or.jp/ai/ja/vegefru/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^vegefru_pack/index.html https://www.jma.or.jp/ai/ja/vegefru/index.php [R=301,L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^vegefru_pack/(.*)$ http://www.jma.or.jp/ai/ja/vegefru/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^vegefru_pack/(.*)$ https://www.jma.or.jp/ai/ja/vegefru/$1 [R=301,L]
+
+#来場するには（拡張子変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^visit/index.html http://www.jma.or.jp/ai/ja/visit/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^visit/index.html https://www.jma.or.jp/ai/ja/visit/index.php [R=301,L]
+
+#農作業負担軽減EXPO（ディレクトリ名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^workload_re_expo/index.html http://www.jma.or.jp/ai/ja/farmwork/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^workload_re_expo/index.html https://www.jma.or.jp/ai/ja/farmwork/index.php [R=301,L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^workload_re_expo/(.*)$ http://www.jma.or.jp/ai/ja/farmwork/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^workload_re_expo/(.*)$ https://www.jma.or.jp/ai/ja/farmwork/$1 [R=301,L]
+
+#スマートアグリ技術展（ディレクトリ名変更）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^workload_reduction/index.html http://www.jma.or.jp/ai/ja/smart/index.php [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^workload_reduction/index.html https://www.jma.or.jp/ai/ja/smart/index.php [R=301,L]
+
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^workload_reduction/(.*)$ http://www.jma.or.jp/ai/ja/smart/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^workload_reduction/(.*)$ https://www.jma.or.jp/ai/ja/smart/$1 [R=301,L]
+
+#集出荷場・選果場EXPO（ディレクトリ削除）
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^workplace/(.*)$ http://www.jma.or.jp/ai/ja/$1 [R=301,L]
+RewriteCond %{SERVER_PORT} 443
+RewriteRule ^workplace/(.*)$ https://www.jma.or.jp/ai/ja/$1 [R=301,L]
+
